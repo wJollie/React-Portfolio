@@ -4,7 +4,7 @@ const Resume = () => {
   return (
     <div>
       <embed
-        src={"https://acrobat.adobe.com/id/urn:aaid:sc:US:56adf5f9-1b96-4247-a9a5-77168ce191db"}
+        src="https://drive.google.com/uc?id=1s3wip6OGJz10_k9h90_CUSFSEMUA-nPM"
         type="application/pdf"
         width="100%"
         height="600px"
