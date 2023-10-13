@@ -23,6 +23,15 @@ const Contact = () => {
     return regex.test(email);
   };
 
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    if (!value) {
+      setErrors({ ...errors, [name]: 'This field is required' });
+    } else if (name === 'email' && !validateEmail(value)) {
+      setErrors({ ...errors, [name]: 'Invalid email format' });
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
@@ -41,9 +50,8 @@ const Contact = () => {
     }
 
     if (Object.keys(newErrors).length === 0) {
-      // Send email (you need a server-side implementation for this)
-      console.log('Sending email:', formData);
-
+      // Save the form data (or send it to your backend)
+      // ...
       // Clear the form and set the submitted state
       setFormData({ name: '', email: '', message: '' });
       setIsSubmitted(true);
@@ -55,7 +63,7 @@ const Contact = () => {
   return (
     <div>
       {isSubmitted ? (
-        <p>Thank you! Your message has been saved!.</p>
+        <p>Thank you! Your message has been saved.</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <div>
@@ -66,6 +74,7 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
+              onBlur={handleBlur}
             />
             {errors.name && <p className="error">{errors.name}</p>}
           </div>
@@ -77,6 +86,7 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
+              onBlur={handleBlur}
             />
             {errors.email && <p className="error">{errors.email}</p>}
           </div>
@@ -87,6 +97,7 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleInputChange}
+              onBlur={handleBlur}
             />
             {errors.message && <p className="error">{errors.message}</p>}
           </div>

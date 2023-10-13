@@ -11,7 +11,7 @@ function Footer() {
     textArea.select();
     document.execCommand('copy');
     document.body.removeChild(textArea);
-    setMessage('Copied to clipboard!');
+    setMessage('Username copied to clipboard!');
     setTimeout(() => {
       setMessage('');
     }, 5000);
