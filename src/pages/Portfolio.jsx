@@ -34,8 +34,8 @@ const projects = [
   },
   {
     title: "Upenn: Primal Planner",
-    image: "/projectImages/primal-planner.png", // Add the path to your project's image
-    deployedLink: "",
+    image: "/projectImages/primal-planners.png", // Add the path to your project's image
+    deployedLink: "https://primalplanner-6f3879bf7f09.herokuapp.com/",
     githubLink: "https://github.com/wJollie/Primal-Planner",
 
   },
