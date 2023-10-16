@@ -3,28 +3,47 @@ import Project from "../components/Project";
 
 const projects = [
   {
-    title: "Project 1",
-    image: "image1.jpg", // Add the path to your project's image
-    deployedLink: "https://example.com/project1",
-    githubLink: "https://github.com/yourusername/project1",
+    title: "Upenn: Programming Quiz",
+    image: "/projectImages/Quiz.png", // Add the path to your project's image
+    deployedLink: "https://wjollie.github.io/Challenge-4-Upenn/",
+    githubLink: "https://github.com/wJollie/Challenge-4-Upenn",
   },
   {
-    title: "Project 2",
-    image: "image2.jpg", // Add the path to your project's image
-    deployedLink: "https://example.com/project2",
-    githubLink: "https://github.com/yourusername/project2",
+    title: "Upenn: Weather Dashboard",
+    image: "/projectImages/WeatherDashboard.png", // Add the path to your project's image
+    deployedLink: "https://wjollie.github.io/Upenn-Weather_Dashboard/",
+    githubLink: "https://github.com/wJollie/Upenn-Weather_Dashboard",
   },
   {
-    title: "Project 3",
-    image: "image3.jpg", // Add the path to your project's image
-    deployedLink: "https://example.com/project3",
-    githubLink: "https://github.com/yourusername/project3",
+    title: "Upenn: Work Day Scheduler",
+    image: "/projectImages/WorkDayScheduler.png", // Add the path to your project's image
+    deployedLink: "https://wjollie.github.io/Upenn-Challenge5/",
+    githubLink: "https://github.com/wJollie/Upenn-Challenge5",
+  },
+  {
+    title: "Upenn: Password Generator",
+    image: "/projectImages/PasswordGenerator.png", // Add the path to your project's image
+    deployedLink: "https://wjollie.github.io/Challenge-3-Upenn/",
+    githubLink: "https://github.com/wJollie/Challenge-3-Upenn",
+  },
+  {
+    title: "Upenn: Factors",
+    image: "/projectImages/Factors.png", // Add the path to your project's image
+    deployedLink: "https://brousy.github.io/factors/",
+    githubLink: "https://github.com/brousy/factors",
+  },
+  {
+    title: "Upenn: Primal Planner",
+    image: "/projectImages/primal-planner.png", // Add the path to your project's image
+    deployedLink: "",
+    githubLink: "https://github.com/wJollie/Primal-Planner",
+
   },
 ];
 
 const Portfolio = () => {
   return (
-    <div>
+    <div className="projectPageWrapper">
       <h1>Portfolio</h1>
       {projects.map((project, index) => (
         <Project

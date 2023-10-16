@@ -4,8 +4,8 @@ import React from "react";
 function Project({ title, image, deployedLink, githubLink }) {
   return (
     <div className="project">
-      <img src={image} alt={title} />
       <h3>{title}</h3>
+      <img className="projectImageClass" src={image} alt={title} />
       <a href={deployedLink} target="_blank" rel="noopener noreferrer">
         View Project
       </a>
