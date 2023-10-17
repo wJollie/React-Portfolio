@@ -138,6 +138,56 @@ header {
   border-radius: 50%;
 }
 
+.projectWrapper {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create grid columns with a minimum width of 300px */
+  gap: 100px; /* Add some spacing between grid items */
+  justify-content: center; /* Center the grid horizontally */
+  align-items: center; /* Center the grid vertically */
+  text-align: center;
+}
+
+.projectPageWrapper {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #F8F0E5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  height: 400px;
+  transition: transform 0.25s;
+}
+
+
+.projectImageClass {
+  height: 250px;
+  width: 250px;
+}
+
+.project a {
+  color: #0F2C59; /* Change the color to the desired color for unvisited links */
+  text-decoration: none; /* Remove underline */
+}
+
+.project a:hover {
+  color: white;
+  background-color: #0F2C59; /* Change the color for links on hover */
+}
+
+
 .footer {
   display: flex;
   flex-direction: row;
