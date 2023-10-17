@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 function Footer() {
-  const [message, setMessage] = useState(''); // State to store the message
+  const [message, setMessage] = useState('');
 
   const handleCopyToClipboard = (textToCopy, event) => {
-    event.preventDefault(); // Prevent the default behavior (scrolling to the top)
+    event.preventDefault();
     const textArea = document.createElement('textarea');
     textArea.value = textToCopy;
     document.body.appendChild(textArea);
@@ -13,13 +13,15 @@ function Footer() {
     document.body.removeChild(textArea);
     setMessage('Username copied to clipboard!');
     setTimeout(() => {
-      setMessage('');
-    }, 5000);
+      setMessage(''); // Clear the message
+    }, 2000);
   };
 
-  return (
-    <div id="contact-logos">
-        {message && <p>{message}</p>}
+  return (    
+    <footer>
+      {message && <p className="message">{message}</p>}
+      <div className="footer">
+      <div id="contact-logos">
       <a href="https://github.com/wJollie" rel="noreferrer" target="_blank">
         <img className="logos" src="/projectImages/github.svg" alt="Github Logo" />
       </a>
@@ -30,6 +32,8 @@ function Footer() {
         <img className="logos" src="/projectImages/discord.svg" alt="Discord Logo" />
       </a>
     </div>
+    </div>
+    </footer>
   );
 }
 
