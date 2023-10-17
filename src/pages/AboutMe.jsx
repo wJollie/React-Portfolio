@@ -2,9 +2,9 @@ import React from 'react';
 
 const AboutMe = () => {
   return (
-    <section>
+    <section className='aboutMeWrapper'>
       <h1>About Me</h1>
-      <img src="/Pfp.svg" alt="My Photo" />
+      <img className='profileImage' src="/Pfp.PNG" alt="My Photo" />
       <section>
         <h2>Experience</h2>
         <ul>

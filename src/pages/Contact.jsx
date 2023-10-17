@@ -62,8 +62,9 @@ const Contact = () => {
 
   return (
     <div>
+      <h1 className='contactMeText'>Contact Me!</h1>
       {isSubmitted ? (
-        <p>Thank you! Your message has been saved.</p>
+        <p className='thankYou'>Thank you! Your message has been saved.</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <div>
