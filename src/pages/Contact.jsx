@@ -66,7 +66,7 @@ const Contact = () => {
       {isSubmitted ? (
         <p className='thankYou'>Thank you! Your message has been saved.</p>
       ) : (
-        <form name="contact" method="post" action="/">
+        <form name="contact" method="post" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="contact" />
           <div>
             <label htmlFor="name">Name:</label>
