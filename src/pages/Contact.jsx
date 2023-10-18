@@ -50,8 +50,8 @@ const Contact = () => {
     }
 
     if (Object.keys(newErrors).length === 0) {
-      // Save the form data (or send it to your backend)
-      // ...
+      // You don't need to specify the form action here because Netlify will handle it for you.
+      // Just set the `data-netlify="true"` attribute on the form.
       // Clear the form and set the submitted state
       setFormData({ name: '', email: '', message: '' });
       setIsSubmitted(true);
@@ -66,7 +66,7 @@ const Contact = () => {
       {isSubmitted ? (
         <p className='thankYou'>Thank you! Your message has been saved.</p>
       ) : (
-        <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true">
+        <form onSubmit={handleSubmit} name="contact" data-netlify="true">
           <div>
             <label htmlFor="name">Name:</label>
             <input
