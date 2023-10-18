@@ -6,32 +6,67 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (contact) => {
-    const { name, value } = contact.target;
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: '' });
+    }
   };
 
-  const handleSubmit = (contact) => {
-    contact.preventDefault();
+  const validateEmail = (email) => {
+    // Simple email format validation
+    const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    return regex.test(email);
+  };
 
-    // Simplified form submission: you can send this data to your backend or use other logic as needed.
-    console.log('Submitted Data:', formData);
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    if (!value) {
+      setErrors({ ...errors, [name]: 'This field is required' });
+    } else if (name === 'email' && !validateEmail(value)) {
+      setErrors({ ...errors, [name]: 'Invalid email format' });
+    }
+  };
 
-    // Clear the form and set the submitted state
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitted(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = {};
+
+    // Validate required fields
+    if (!formData.name) {
+      newErrors.name = 'Name is required';
+    }
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Invalid email format';
+    }
+    if (!formData.message) {
+      newErrors.message = 'Message is required';
+    }
+
+    if (Object.keys(newErrors).length === 0) {
+      // Save the form data (or send it to your backend)
+      // ...
+      // Clear the form and set the submitted state
+      setFormData({ name: '', email: '', message: '' });
+      setIsSubmitted(true);
+    } else {
+      setErrors(newErrors);
+    }
   };
 
   return (
     <div>
-      <h1>Contact Me</h1>
+      <h1 className='contactMeText'>Contact Me!</h1>
       {isSubmitted ? (
-        <p>Thank you! Your message has been saved.</p>
+        <p className='thankYou'>Thank you! Your message has been saved.</p>
       ) : (
-        <form name="contact" method="post" data-netlify="true" onSubmit={handleSubmit}>
-          <input type="hidden" name="form-name" value="contact" />
+        <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">Name:</label>
             <input
@@ -40,19 +75,21 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              required
+              onBlur={handleBlur}
             />
+            {errors.name && <p className="error">{errors.name}</p>}
           </div>
           <div>
             <label htmlFor="email">Email:</label>
             <input
-              type="email"
+              type="text"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              required
+              onBlur={handleBlur}
             />
+            {errors.email && <p className="error">{errors.email}</p>}
           </div>
           <div>
             <label htmlFor="message">Message:</label>
@@ -61,8 +98,9 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              required
+              onBlur={handleBlur}
             />
+            {errors.message && <p className="error">{errors.message}</p>}
           </div>
           <button type="submit">Submit</button>
         </form>
