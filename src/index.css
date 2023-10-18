@@ -322,9 +322,37 @@ button:focus-visible {
   }
 
   /* Add responsive styles for other elements as needed */
+}
 
-  header {
+.resumeError {
+  display: none;
+}
+
+
+@media (max-width: 973px) {
+  .header-content {
     height: 100%;
-    width: 100%;
   }
+
+  .navButtons {
+    height: 100%;
+    margin-right: 0px;
+    scale: 0.5;
+  }
+
+  footer {
+    height: 100%;
+    width: 100%; /* Ensure the footer background fills the mobile width */
+    transform: scale(0.5);
+    background-color: #f8e0bf;
+  }
+
+  form {
+    scale: 0.8;
+  }
+
+  .resumeError {
+    display: block;
+  }
+
 }
