@@ -1,4 +1,3 @@
-// Project.js
 import React from "react";
 
 function Project({ title, image, deployedLink, githubLink }) {

@@ -17,7 +17,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Set the minimum height to fill the viewport */
+  min-height: 100vh; 
 }
 
 .contactMeText {
@@ -33,7 +33,7 @@ body {
   justify-content: center;
 }
 
-/* Style the ul (unordered list) */
+/* Style the ul */
 .aboutMeWrapper ul {
   list-style-position: inside; /* Place bullet points inside the list items */
   text-align: center; /* Reset text alignment to left inside the list items */

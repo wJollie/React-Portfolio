@@ -18,7 +18,6 @@ const Contact = () => {
   };
 
   const validateEmail = (email) => {
-    // Simple email format validation
     const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     return regex.test(email);
   };
@@ -36,7 +35,7 @@ const Contact = () => {
     e.preventDefault();
     const newErrors = {};
 
-    // Validate required fields
+    
     if (!formData.name) {
       newErrors.name = 'Name is required';
     }
@@ -50,9 +49,6 @@ const Contact = () => {
     }
 
     if (Object.keys(newErrors).length === 0) {
-      // Save the form data (or send it to your backend)
-      // ...
-      // Clear the form and set the submitted state
       setFormData({ name: '', email: '', message: '' });
       setIsSubmitted(true);
     } else {

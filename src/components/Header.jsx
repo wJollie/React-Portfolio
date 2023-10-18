@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
-  // Get the current route location
   const location = useLocation();
 
   return (
