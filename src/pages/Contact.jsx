@@ -66,7 +66,7 @@ const Contact = () => {
       {isSubmitted ? (
         <p className='thankYou'>Thank you! Your message has been saved.</p>
       ) : (
-        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
           <div>
             <label htmlFor="name">Name:</label>
@@ -109,5 +109,6 @@ const Contact = () => {
     </div>
   );
 };
+
 
 export default Contact;
