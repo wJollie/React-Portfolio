@@ -138,48 +138,43 @@ header {
   border-radius: 50%;
 }
 
+/* Style the projectWrapper container as a grid */
 .projectWrapper {
-  display: grid; /* Use grid layout */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create grid columns with a minimum width of 300px */
-  gap: 100px; /* Add some spacing between grid items */
-  justify-content: center; /* Center the grid horizontally */
-  align-items: center; /* Center the grid vertically */
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust column width as needed */
+  gap: 20px; /* Adjust the gap between projects as needed */
+  justify-content: center; /* Center projects horizontally */
 }
 
-.projectPageWrapper {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-
-
+/* Style individual project items */
 .project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #F8F0E5;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin: 20px;
-  width: 300px;
-  height: 400px;
-  transition: transform 0.25s;
+  background-color: #F8F0E5; /* Background color */
+  padding: 20px; /* Padding around each project */
+  border: 1px solid #ccc; /* Add a border for separation */
+  text-align: center;/* Center content inside the project */
+  max-width: 300px;
+  /* You can add more styles like font-size, font-weight, etc. */
 }
 
+
+.projectPageTitle {
+  text-align: center;
+  justify-content: center;
+}
 
 .projectImageClass {
   height: 250px;
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
 }
 
 .project a {
-  color: #0F2C59; /* Change the color to the desired color for unvisited links */
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
+  color: #0F2C59;
+  padding: 5px 10px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .project a:hover {
@@ -187,11 +182,18 @@ header {
   background-color: #0F2C59; /* Change the color for links on hover */
 }
 
+.projectLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+}
 
 .footer {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   text-align: center;
   background-color: #F8F0E5;
@@ -282,4 +284,47 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+/* Adjust font sizes and padding for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  /* Add more responsive styles here */
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .projectWrapper {
+    grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+    gap: 20px; /* Reduce the gap between items */
+    padding: 20px; /* Add some padding to the projects for spacing */
+  }
+
+  .project {
+    width: 100%; /* Make projects span the full width */
+    height: auto; /* Adjust height for content */
+    margin: 0; /* Remove the margin */
+    padding: 20px; /* Add some padding to the project cards */
+  }
+
+  .projectImageClass {
+    height: 150px; /* Adjust the image size */
+    width: 150px; /* Adjust the image size */
+  }
+
+  .project a:hover {
+    color: #0F2C59; /* Change the color for links on hover */
+    background-color: transparent; /* Remove the background color on hover */
+  }
+
+  /* Add responsive styles for other elements as needed */
+
+  header {
+    height: 100%;
+    width: 100%;
+  }
 }

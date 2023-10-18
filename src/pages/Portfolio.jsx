@@ -39,12 +39,13 @@ const projects = [
     githubLink: "https://github.com/wJollie/Primal-Planner",
 
   },
+  
 ];
 
 const Portfolio = () => {
   return (
-    <div className="projectPageWrapper">
-      <h1>Portfolio</h1>
+    <div>
+      <h1 className="projectPageTitle">Portfolio</h1>
       <div className="projectWrapper">
       {projects.map((project, index) => (
         <Project
