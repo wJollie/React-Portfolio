@@ -8,13 +8,13 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (contact) => {
+    const { name, value } = contact.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (contact) => {
+    contact.preventDefault();
 
     // Simplified form submission: you can send this data to your backend or use other logic as needed.
     console.log('Submitted Data:', formData);
