@@ -7,6 +7,11 @@
     <title>William's Portfolio</title>
   </head>
   <body>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} onBlur={handleBlur} />
+      <input type="text" id="email" name="email" value={formData.email} onChange={handleInputChange} onBlur={handleBlur} />
+      <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} onBlur={handleBlur}></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
