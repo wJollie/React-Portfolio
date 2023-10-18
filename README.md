@@ -8,6 +8,11 @@ This is a portfolio to showcase my work. It is a project for the Upenn fullstack
 
 https://williamsportfolio.netlify.app/
 
+## Image
+
+![Capture](https://github.com/wJollie/React-Portfolio/assets/61369939/0cb05eca-9d62-4761-8df1-342b51d4b9ed)
+
+
 ## Table of Contents
 
 - [Installation](#installation)
