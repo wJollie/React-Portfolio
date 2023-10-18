@@ -34,17 +34,19 @@ const projects = [
   },
   {
     title: "Upenn: Primal Planner",
-    image: "/projectImages/primal-planners.png", // Add the path to your project's image
+    image: "/projectImages/primal-planners.PNG", // Add the path to your project's image
     deployedLink: "https://primalplanner-6f3879bf7f09.herokuapp.com/",
     githubLink: "https://github.com/wJollie/Primal-Planner",
 
   },
+  
 ];
 
 const Portfolio = () => {
   return (
-    <div className="projectPageWrapper">
-      <h1>Portfolio</h1>
+    <div>
+      <h1 className="projectPageTitle">Portfolio</h1>
+      <div className="projectWrapper">
       {projects.map((project, index) => (
         <Project
           key={index}
@@ -54,6 +56,7 @@ const Portfolio = () => {
           githubLink={project.githubLink}
         />
       ))}
+      </div>
     </div>
   );
 };
