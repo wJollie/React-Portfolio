@@ -16,8 +16,8 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // The form is handled by Netlify, so you don't need to specify the form action.
-    // Just make sure to use the 'name' attribute to identify the form.
+    // Simplified form submission: you can send this data to your backend or use other logic as needed.
+    console.log('Submitted Data:', formData);
 
     // Clear the form and set the submitted state
     setFormData({ name: '', email: '', message: '' });
@@ -26,9 +26,9 @@ const Contact = () => {
 
   return (
     <div>
-      <h1 className="contactMeText">Contact Me!</h1>
+      <h1>Contact Me</h1>
       {isSubmitted ? (
-        <p className="thankYou">Thank you! Your message has been saved.</p>
+        <p>Thank you! Your message has been saved.</p>
       ) : (
         <form name="contact" method="post" data-netlify="true" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="contact" />
