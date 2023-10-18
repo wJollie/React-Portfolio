@@ -66,7 +66,7 @@ const Contact = () => {
       {isSubmitted ? (
         <p className='thankYou'>Thank you! Your message has been saved.</p>
       ) : (
-        <form onSubmit={handleSubmit} name="contact" data-netlify="true">
+        <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true">
           <div>
             <label htmlFor="name">Name:</label>
             <input
