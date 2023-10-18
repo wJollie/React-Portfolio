@@ -66,8 +66,9 @@ const Contact = () => {
       {isSubmitted ? (
         <p className='thankYou'>Thank you! Your message has been saved.</p>
       ) : (
-        <form name="contact" method="POST" onSubmit={handleSubmit}>
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="contact" />
+          <div>
             <label htmlFor="name">Name:</label>
             <input
               type="text"
@@ -78,6 +79,8 @@ const Contact = () => {
               onBlur={handleBlur}
             />
             {errors.name && <p className="error">{errors.name}</p>}
+          </div>
+          <div>
             <label htmlFor="email">Email:</label>
             <input
               type="text"
@@ -88,6 +91,8 @@ const Contact = () => {
               onBlur={handleBlur}
             />
             {errors.email && <p className="error">{errors.email}</p>}
+          </div>
+          <div>
             <label htmlFor="message">Message:</label>
             <textarea
               id="message"
@@ -97,6 +102,7 @@ const Contact = () => {
               onBlur={handleBlur}
             />
             {errors.message && <p className="error">{errors.message}</p>}
+          </div>
           <button type="submit">Submit</button>
         </form>
       )}
