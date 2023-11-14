@@ -39,6 +39,12 @@ const projects = [
     githubLink: "https://github.com/wJollie/Primal-Planner",
 
   },
+  {
+    title: "ConnectUs",
+    image: "/projectImages/ContactUs.PNG",
+    deployedLink: "https://connectus943-7bbab6a61bad.herokuapp.com/",
+    githubLink: "https://github.com/wJollie/ConnectUs",
+  }
   
 ];
 
